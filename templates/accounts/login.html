@@ -6,6 +6,20 @@
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-conten padding-y" style="min-height:84vh">
 
+{% if request.GET.command == 'verification' %}
+
+<div class="container mx-auto alert alert-info text-center" role="alert" style="max-width: 1000px; margin-top:100px;">
+  Activation link sent to your email address [ {{request.GET.email}} ]
+  <br><br>
+  Alredy verified ? <a href="{% url 'login' %}">Login</a>
+</div>
+
+{% endif %}
+
+
+
+
+
     <!-- ============================ COMPONENT LOGIN   ================================= -->
         <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
             
@@ -34,5 +48,6 @@
          <p class="text-center mt-4">Don't have account? <a href="{% url 'register' %}">Sign up</a></p>
          <br><br>
     <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
+    
 
 {% endblock content %}
