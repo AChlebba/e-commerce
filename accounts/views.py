@@ -3,6 +3,7 @@ from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
 from .forms import RegistrationForm
 from .models import Account
+from store.models import Product
 from carts.models import Cart, CartItem
 from carts.views import _cart_id
 import requests
@@ -66,6 +67,7 @@ def register(request):
 
 
 def login(request):
+
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
